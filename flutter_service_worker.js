@@ -3,11 +3,11 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"flutter_bootstrap.js": "f9ac3e935108f97208abd966fe9bf6dd",
+const RESOURCES = {"flutter_bootstrap.js": "489b2d897328685891fafb706e34eeaf",
 "version.json": "3d2ae1201680513a199a7a8b5dbc2c48",
 "index.html": "f0cd766c285b68601eb69b637a006dde",
 "/": "f0cd766c285b68601eb69b637a006dde",
-"main.dart.js": "5401d5e26f0d4bb4dd82c8cc526e22e5",
+"main.dart.js": "2c365f9cf9378eb257f89199addcd58a",
 "sqlite3.wasm": "78498ab7d022b0069cdf876adf5b1515",
 "flutter.js": "76f08d47ff9f5715220992f993002504",
 "favicon.png": "c3892348c2dc9bc48e53bf1628299749",
@@ -35,7 +35,7 @@ const RESOURCES = {"flutter_bootstrap.js": "f9ac3e935108f97208abd966fe9bf6dd",
 "assets/fonts/NotoSans-Regular.ttf": "c1a15ca2cb465593f3ada7eaae22e7bd",
 "assets/fonts/Roboto-Regular.ttf": "d36989954a5a414e4c3cf8de01c7c3cf",
 "assets/fonts/NotoSans-Bold.ttf": "46ad0587acc993ee2e4d4955136e171a",
-"assets/fonts/MaterialIcons-Regular.otf": "94233dc6e9f50671acb5cea0914f354d",
+"assets/fonts/MaterialIcons-Regular.otf": "b1c730919b1312484831657601790104",
 "assets/fonts/Roboto-Italic.ttf": "93eb2d67168d13093c12989eb2a0c4ad",
 "assets/fonts/Roboto-Bold.ttf": "0b7c800c09f473ea27b1cd68babbf3eb",
 "assets/fonts/NotoSansCJK-Regular.ttf": "ca18d06b5474f97597caba16c12ee6fc",
