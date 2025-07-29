@@ -19,7 +19,7 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="ALFI">
+  <meta name="description" content="A new Flutter project.">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -35,33 +35,7 @@
 </head>
 
 <body>
-  <div id="loading-indicator"></div> <!-- Индикатор загрузки -->
-  <script>
-    // Очистка кеша при загрузке (оставляем как есть)
-    if ('caches' in window) {
-      caches.keys().then(function (names) {
-        for (let name of names) caches.delete(name);
-      });
-    }
-
-    // Скрытие индикатора загрузки после инициализации Flutter
-    window.addEventListener('flutter-first-frame', function () {
-      var loadingIndicator = document.getElementById('loading-indicator');
-      if (loadingIndicator) {
-        loadingIndicator.style.display = 'none';
-      }
-    });
-  </script>
   <script src="flutter_bootstrap.js" async></script>
-  <!-- Добавляем sql.js -->
-  <!-- <script src="sql.js/sql-wasm.js"></script>
-  <script>
-    var sqlPromise = initSqlJs({
-      locateFile: file => 'sql.js/' + file
-    });
-    window.sqlite3InitModule = sqlPromise;
-  </script> -->
-  <script src="main.dart.js" defer></script>
 </body>
 
 </html>
