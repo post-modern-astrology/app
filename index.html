@@ -52,7 +52,14 @@
       if (!window.filePicker) {
         window.filePicker = {
           initialized: true,
-          instance: {}
+          // Создаем полноценный объект instance с методом _instance
+          instance: {
+            _instance: {}, // Добавляем _instance как объект
+            // Добавляем необходимые методы
+            pickFiles: function () {
+              return Promise.resolve(null);
+            }
+          }
         };
       }
 
