@@ -36,11 +36,29 @@
 
   <!-- Замените мета-тег CSP на этот -->
   <!-- <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; img-src 'self' data: https://*.supabase.co https://*.supabase.in blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co https://*.supabase.in wss://*.supabase.co; font-src 'self' data:;"> -->
+    content="default-src 'self'; img-src 'self' data: https://*.supabase.co https://*.supabase.in blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.gstatic.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co https://*.supabase.in wss://*.supabase.co; font-src 'self' data: https://fonts.gstatic.com;"> -->
 </head>
 
 <body>
   <script src="flutter_bootstrap.js" async></script>
+
+  <!-- Добавьте этот скрипт для инициализации FilePicker -->
+  <script>
+    // Инициализация FilePicker для веб
+    window.addEventListener('load', function () {
+      // Создаем глобальный объект для FilePicker, если он еще не существует
+      if (!window.filePicker) {
+        window.filePicker = {
+          initialized: true,
+          instance: {}
+        };
+      }
+
+      // Отправляем событие о готовности FilePicker
+      window.dispatchEvent(new CustomEvent('filePickerReady'));
+      console.log('FilePicker web initialized');
+    });
+  </script>
 </body>
 
 </html>
