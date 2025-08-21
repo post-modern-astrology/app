@@ -34,6 +34,11 @@
   <link rel="manifest" href="manifest.json">
   <meta name="file-picker-web" content="enabled">
 
+  <!-- ВАЖНО: задаем renderer ДО загрузки bootstrap -->
+  <script>
+    window.flutterWebRenderer = "html";
+  </script>
+
   <!-- Замените мета-тег CSP на этот -->
   <!-- <meta http-equiv="Content-Security-Policy"
     content="default-src 'self'; img-src 'self' data: https://*.supabase.co https://*.supabase.in blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.gstatic.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co https://*.supabase.in wss://*.supabase.co; font-src 'self' data: https://fonts.gstatic.com;"> -->
@@ -44,8 +49,8 @@
 
   <!-- Добавьте этот скрипт для инициализации FilePicker -->
   <script>
-    // Принудительно использовать HTML рендерер вместо CanvasKit
-    // window.flutterWebRenderer = "html";
+    // Удаляем здесь дублирование установки renderer,
+    // он уже задан в <head> выше
     // Инициализация FilePicker для веб
     window.addEventListener('load', function () {
       // Создаем глобальный объект для FilePicker, если он еще не существует
