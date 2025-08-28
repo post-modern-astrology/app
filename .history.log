@@ -6,3 +6,11 @@ cd ../..
 cd packages/localization
 flutter pub get
 cd ../../apps/alfi
+git add .
+git commit -m 'fixes'
+cd ../..
+flutter build web
+cd build/web
+git add .
+git commit -m 'fixes'
+git push
