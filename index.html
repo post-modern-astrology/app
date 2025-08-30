@@ -3,18 +3,18 @@
 
 <head>
   <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
+      If you are serving your web app in a path other than the root, change the
+      href value below to reflect the base path you are serving from.
+    
+      The path provided below has to start and end with a slash "/" in order for
+      it to work correctly.
+    
+      For more details:
+      * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+    
+      This is a placeholder for base href that will be replaced by the value of
+      the `--base-href` argument provided to `flutter build`.
+    -->
   <!-- <base href="/"> -->
 
   <meta charset="UTF-8">
@@ -38,6 +38,9 @@
   <script>
     window.flutterWebRenderer = "html";
   </script>
+
+  <!-- Добавьте подключение нового bootstrap-файла (используется ваш кастомный web/flutter_bootstrap.js) -->
+  <script src="flutter_bootstrap.js" async></script>
 
   <!-- Легкий сплэш: стиль и фон, чтобы не было белого экрана -->
   <style>
@@ -90,19 +93,21 @@
 
   <!-- Замените мета-тег CSP на этот -->
   <!-- <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; img-src 'self' data: https://*.supabase.co https://*.supabase.in blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.gstatic.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co https://*.supabase.in wss://*.supabase.co; font-src 'self' data: https://fonts.gstatic.com;"> -->
+      content="default-src 'self'; img-src 'self' data: https://*.supabase.co https://*.supabase.in blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.gstatic.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co https://*.supabase.in wss://*.supabase.co; font-src 'self' data: https://fonts.gstatic.com;"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Noto+Sans+Symbols+2&family=Noto+Sans+Symbols&display=swap">
 </head>
 
 <body>
   <!-- Сплэш-экран до первого кадра Flutter -->
   <div id="splash" aria-label="Loading...">
-    <!-- Можно добавить логотип: <img src="logo.png" width="128" height="128" alt="ALFI"> -->
     <div class="spinner" role="progressbar" aria-busy="true"></div>
     <div class="splash-title">Loading…</div>
   </div>
 
-  <!-- Спрятать сплэш, когда Flutter отрисовал первый кадр -->
   <script>
+    // Скрываем сплэш, когда Flutter отрисует первый кадр
     window.addEventListener('flutter-first-frame', function () {
       const el = document.getElementById('splash');
       if (!el) return;
@@ -111,9 +116,7 @@
     });
   </script>
 
-  <script src="flutter_bootstrap.js" async></script>
-
-  <!-- Добавьте этот скрипт для инициализации FilePicker -->
+  <!-- УДАЛИТЕ эту строку, она и вызывает assertion после Restart -->
   <script>
     // Удаляем здесь дублирование установки renderer,
     // он уже задан в <head> выше
