@@ -2,21 +2,6 @@
 <html>
 
 <head>
-  <!--
-      If you are serving your web app in a path other than the root, change the
-      href value below to reflect the base path you are serving from.
-    
-      The path provided below has to start and end with a slash "/" in order for
-      it to work correctly.
-    
-      For more details:
-      * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-    
-      This is a placeholder for base href that will be replaced by the value of
-      the `--base-href` argument provided to `flutter build`.
-    -->
-  <!-- <base href="/"> -->
-
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="ALFI">
@@ -36,11 +21,13 @@
 
   <!-- ВАЖНО: задаем renderer ДО загрузки bootstrap -->
   <script>
-    window.flutterWebRenderer = "html";
+    window.flutterWebRenderer = "canvaskit";
+    // window.flutterWebRenderer = "html";
   </script>
 
-  <!-- Добавьте подключение нового bootstrap-файла (используется ваш кастомный web/flutter_bootstrap.js) -->
+  <!-- УДАЛЕНО из head:
   <script src="flutter_bootstrap.js" async></script>
+  -->
 
   <!-- Легкий сплэш: стиль и фон, чтобы не было белого экрана -->
   <style>
@@ -90,13 +77,9 @@
       }
     }
   </style>
-
-  <!-- Замените мета-тег CSP на этот -->
-  <!-- <meta http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' data: https://*.supabase.co https://*.supabase.in blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.gstatic.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.supabase.co https://*.supabase.in wss://*.supabase.co; font-src 'self' data: https://fonts.gstatic.com;"> -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Noto+Sans+Symbols+2&family=Noto+Sans+Symbols&display=swap">
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Noto+Sans+Symbols+2&family=Noto+Sans+Symbols&display=swap"> -->
 </head>
 
 <body>
@@ -116,7 +99,7 @@
     });
   </script>
 
-  <!-- УДАЛИТЕ эту строку, она и вызывает assertion после Restart -->
+  <!-- ?? -->
   <script>
     // Удаляем здесь дублирование установки renderer,
     // он уже задан в <head> выше
@@ -142,6 +125,8 @@
       console.log('FilePicker web initialized');
     });
   </script>
+  <!-- Переносим bootstrap в конец body и используем defer -->
+  <script src="flutter_bootstrap.js" defer></script>
 </body>
 
 </html>
