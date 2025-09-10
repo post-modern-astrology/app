@@ -14,3 +14,23 @@ cd build/web
 git add .
 git commit -m 'fixes'
 git push
+cd ../..
+flutter build web
+cd build/web
+git add .
+git commit -m 'f'
+git push
+cd ../..
+flutter build web
+cd build/web
+git add .
+git commit -m 'f'
+git push
+cd build/web
+cd ../..
+flutter build web
+cd build/web
+git add .
+git commit -m 'f'
+git push
+cd ../..
